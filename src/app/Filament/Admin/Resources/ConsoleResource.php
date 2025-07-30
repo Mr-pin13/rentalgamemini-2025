@@ -38,7 +38,13 @@ class ConsoleResource extends Resource
                     ->required()
                     ->numeric()
                     ->default(0.00),
-                Forms\Components\TextInput::make('status')
+                Forms\Components\Select::make('status')
+                    ->label('Status')
+                    ->options([
+                        'available' => 'Available',
+                        'rented' => 'Rented',
+                        'maintenance' => 'Maintenance',
+                    ])
                     ->required(),
             ]);
     }

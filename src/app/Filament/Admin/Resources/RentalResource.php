@@ -29,7 +29,13 @@ class RentalResource extends Resource
                 Forms\Components\DateTimePicker::make('start_at')
                     ->required(),
                 Forms\Components\DateTimePicker::make('end_at'),
-                Forms\Components\TextInput::make('status')
+                Forms\Components\Select::make('status')
+                    ->label('Status')
+                    ->options([
+                        'ongoing'  => 'Ongoing',
+                        'returned' => 'Returned',
+                        'cancelled'=> 'Cancelled',
+                        ])
                     ->required(),
                 Forms\Components\TextInput::make('total')
                     ->required()
